@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sdf version="1.10">
+    <model name="GateRightImageLabel">
+        <cast_shadows>false</cast_shadows>
+        <link name="link">
+            <visual name="right_side_label">
+                <pose>0 0 0 0 0 0</pose>
+                <geometry>
+                    <box>
+                        <size>0.31 0.001 0.33</size>
+                    </box>
+                </geometry>
+                <cast_shadows>false</cast_shadows>
+
+                <material>
+                    <diffuse>1 1 1 1</diffuse>
+                    <specular>0.1 0.1 0.1 1</specular>
+                    <pbr>
+                        <metal>
+                            <albedo_map>model://Gate/meshes/SnRes.png</albedo_map>
+                        </metal>
+                    </pbr>
+                </material>
+
+                <plugin filename="gz-sim-label-system" name="gz::sim::systems::Label">
+                    <label>1</label>
+                </plugin>
+            </visual>
+        </link>
+        <static>true</static>
+    </model>
+</sdf>

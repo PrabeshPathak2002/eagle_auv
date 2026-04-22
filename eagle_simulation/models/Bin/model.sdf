@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sdf version="1.10">
+    <model name="Bin">
+        <cast_shadows>false</cast_shadows>
+        <link name="link">
+            <cast_shadows>false</cast_shadows>
+            <collision name="collision">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/Bin.obj</uri>
+                        <scale>1 1 1</scale>
+                    </mesh>
+                </geometry>
+            </collision>
+
+            <visual name="visual">
+                <geometry>
+                    <mesh>
+                        <uri>meshes/Bin.obj</uri>
+                        <scale>1 1 1</scale>
+                    </mesh>
+                </geometry>
+                <cast_shadows>false</cast_shadows>
+            </visual>
+        </link>
+
+        <plugin filename="gz-sim-label-system" name="gz::sim::systems::Label">
+            <label>7</label>
+        </plugin>
+        <static>true</static>
+    </model>
+</sdf>

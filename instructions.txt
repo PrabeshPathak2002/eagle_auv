@@ -1,0 +1,12 @@
+terminal 1 {GAZEBO}
+gz sim -v4 -r bluerov2_underwater.world
+
+
+terminal 2 {ArduSub Sitl}
+cd ~/ardupilot/ArduSub
+sim_vehicle.py -v ArduSub -f gazebo-bluerov2 --model json:127.0.0.1:9002 --console --out=udp:127.0.0.1:14551
+
+terminal 3 {MAVROS}
+source ~/ros2_ws/install/setup.bash
+ros2 run mavros mavros_node --ros-args -p fcu_url:=udp://:14551@
+
